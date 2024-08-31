@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
+
+<link rel="stylesheet" href="{% static 'about.css' %}">
+
+<div class="content">
+    <h1>Sobre Mim</h1>
+    <div class="profile-info">
+        <h3>Otávio Silva Cândido</h3>
+        <p>Estudande do ensino médio integrado com curso técnico de informática.</p>
+    </div>
+
+    <h1>Competências</h1>
+    <div class="skills">
+        {% for skill in skills %}
+            <div class="skill-item">
+                <h2>{{ skill.name }}</h2>
+                <p>{{ skill.description }}</p>
+                <p>{{ skill.expertise }}/5</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h1>Cursos</h1>
+    <div class="courses">
+        {% for course in courses %}
+            <div class="course-item">
+                <h2>{{ course.name }}</h2>
+                <p>{{ course.description }}</p>
+                <p>{{ course.coordination }}</p>
+                <img src="{{course.certificate.url }}" >
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

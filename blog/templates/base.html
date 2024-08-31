@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="{% static 'global.css' %}">
+</head>
+<body>
+    <header class="base-header">
+        <a href="/">Início</a>
+        <a href="/about">Sobre mim</a>
+    </header>
+
+    <main>
+        {% block main %}
+            <p>Secret</p>
+        {% endblock %}
+    </main>
+
+    <footer class="base-footer">
+        <p>Todos os direitos reservados (c)</p>
+    </footer>
+</body>
+</html>
